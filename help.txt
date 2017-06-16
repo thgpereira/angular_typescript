@@ -1,0 +1,1 @@
+Compilar TSC: Ctrl+Shift+B
