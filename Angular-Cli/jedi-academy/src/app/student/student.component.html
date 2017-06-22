@@ -1,6 +1,9 @@
-<div>
-  Student: {{name}}
-  <div [hidden]="!isJedi">
+<div *ngIf="student">
+  Student: {{student?.name}}
+  <div *ngIf="student?.isJedi">
     Jedi Template: Coruscant
   </div>
 </div>
+<p *ngIf="!student">
+  Sem dados para exibir
+</p>
