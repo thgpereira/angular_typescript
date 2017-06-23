@@ -1,7 +1,9 @@
 <div *ngIf="student">
-  Student: {{student?.name}}
+  Student: <a href="#" (click)="clicked()">{{student?.name}}</a>
   <div *ngIf="student?.isJedi">
-    Jedi Template: Coruscant
+    Jedi Template: Coruscant <br/>
+    <button (click)="description.focus()">Focus</button> <br/>
+    <textarea #description></textarea>
   </div>
 </div>
 <p *ngIf="!student">
