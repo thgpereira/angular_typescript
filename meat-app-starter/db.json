@@ -370,5 +370,49 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "Endereço",
+      "number": "22",
+      "optionalAddress": "501",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 2,
+          "menuId": "donut"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "Novo endereço",
+      "number": "348",
+      "optionalAddress": "102",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "capp"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "Rua Ernesto",
+      "number": "501",
+      "optionalAddress": "22",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 3,
+          "menuId": "espreso"
+        }
+      ],
+      "id": 3
+    }
+  ]
 }
