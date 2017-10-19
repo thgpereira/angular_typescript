@@ -6,7 +6,7 @@ import { User, users } from './users'
 export const handleAuthentication = (req: Request, res: Response) => {
   const user = req.body
   if (isValid(user)) {
-    const dbUser: User = users[user.email]
+    const dbUser = users[user.email]
     const payload = { sub: dbUser.email, iss: 'meat-api' }
     const token = jwt.sign(payload, 'meat-api-password')
     res.json({ name: dbUser.name, email: dbUser.email, accessToken: token })
