@@ -1,5 +1,6 @@
 import * as jwt from 'jsonwebtoken'
 
+import { apiConfig } from './api-config'
 import { Request, Response } from 'express'
 import { User, users } from './users'
 
@@ -8,7 +9,7 @@ export const handleAuthentication = (req: Request, res: Response) => {
   if (isValid(user)) {
     const dbUser = users[user.email]
     const payload = { sub: dbUser.email, iss: 'meat-api' }
-    const token = jwt.sign(payload, 'meat-api-password')
+    const token = jwt.sign(payload, apiConfig.secret)
     res.json({ name: dbUser.name, email: dbUser.email, accessToken: token })
   } else {
     res.status(403).json({ message: 'Dados inválidos!' })
