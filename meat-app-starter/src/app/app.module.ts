@@ -3,7 +3,8 @@ import { NgModule, LOCALE_ID, ErrorHandler } from '@angular/core'
 import { HttpClientModule } from '@angular/common/http'
 import { RouterModule, PreloadAllModules } from '@angular/router'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { LocationStrategy, HashLocationStrategy } from '@angular/common'
+import { LocationStrategy, HashLocationStrategy, registerLocaleData } from '@angular/common'
+import locatePt from '@angular/common/locales/pt'
 
 import { ROUTES } from './app.routes'
 import { ApplicationErrorHandler } from './app.error-handler'
@@ -24,6 +25,8 @@ import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './security/login/login.component';
 import { UserDetailComponent } from './header/user-detail/user-detail.component'
+
+registerLocaleData(locatePt, 'pt')
 
 @NgModule({
   declarations: [
@@ -51,7 +54,7 @@ import { UserDetailComponent } from './header/user-detail/user-detail.component'
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    { provide: LOCALE_ID, useValue: 'pt' },
     { provide: ErrorHandler, useClass: ApplicationErrorHandler }
   ],
   bootstrap: [AppComponent]
